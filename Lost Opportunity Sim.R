@@ -151,14 +151,14 @@ summary_data <- summarise_utility(data=saved_utility)
 
 ## REPORT results
 
-# 1) Calculate mean impact (as in Table 2 of Smith et al (in press))
-mean(summary_data$perc_value)  #this is the mean lost economic opportunity (%; from 3 seasons, and trip durations 2-6)
+# 1) Calculate mean lost economic opportunity (%; as in Table 2 of Smith et al (in press))
+mean(summary_data$perc_value)  #this is the mean impact (%) from 3 seasons, 5 ports, and trip durations 2-6
 
 
 # 2) Plot trajectory of total and LCA value (sum of profit in profitable area) for a specific season (as in Fig. 2 of Smith et al (in press))
 #this is from dpearture port 1 (Sand Diego); black = total value, red = LCA value
-season_plot <- 2  #specify season (in this example, 1, 2 or 3)
-max_days_plot <- 3  #trip duration to plot (in this example, from 1-7)
+season_plot <- 3  #specify season (in this example, from 1-3)
+max_days_plot <- 3  #trip duration to plot (in this example, from 2-6)
 saved_utilityX <- saved_utility[saved_utility$season==season_plot &
                                   saved_utility$max_days==max_days_plot,
                                 c(which(names(saved_utility)=="date"),
@@ -170,7 +170,8 @@ plot(saved_utilityX[,1], saved_utilityX[,2], type="l",
 lines(saved_utilityX[,1], saved_utilityX[,3], col="red") #LH value
 abline(v=as.Date(paste0(years_s[season_plot],"-08-31")), lty=2, col="blue") #end date of LCA
 
-## 3) Lost Economic Opportunity, for 9 combinations of departure port (P) and trip duration (D) (as in Fig. 3 of Smith et al (in press))
+
+# 3) Lost Economic Opportunity, for 9 combinations of departure port (P) and trip duration (D) (as in Fig. 3 of Smith et al (in press))
 par(mfrow=c(3,3), mar=c(3,4,2,2.5))
 for (pp in c(1,3,5)) {  #the 3 departure ports to show
   for (mm in c(2,4,6)) {  #the 3 trip durations to show 

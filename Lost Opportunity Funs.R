@@ -1,22 +1,20 @@
 
-
 ###### UTILITY FUNCTION - estimates profit at locations from a specifed vessel departure port
 ## See published article for equation (Smith et al (accepted) J. Appl. Ecology)
 ## Splits variable costs into distance (fuel) and time (crew) costs
 
 exp_profit_port2U <- function(sword_layer, port_start, sword_price, cost_per_km, cost_per_h,
-                              trip_days, set_dur, travel_speed, km_day) {   #Calculate cost function for a given day
-  # sword_layer <- the swordfish CPUE raster, as extracted; will get new profit column added
-  # port_start <- calculated profits are relative to this port location
-  # sword_price <- price per fish (for now, USD $3 per pound, 150 pound = $450 [more like $4 = $600 per fish]); tagged SF by Chugey 80-120 kg each
-  # cost_per_km <- vessel distance (fuel, oil; $/km); $160/d / 70 km/d = $2.3/km
-  # cost_per_h <- vessel time cost (crew, food; $/h); $534/d =  $22.25/h
-  # trip_days <- number of sets in a trip (i.e. 'days' fishing)
-  # set_dur <- set duration (12h)
+                              trip_days, set_dur, travel_speed, km_day) {
+  # sword_layer <- the data frame icnluding swordfish CPUE; a new 'profit' column is added
+  # port_start <- calculated profits are relative to this numbered departure port
+  # sword_price <- price (USD per fish)
+  # cost_per_km <- vessel distance costs (fuel, oil; USD per km)
+  # cost_per_h <- vessel time cost (crew, food; USD per h)
+  # trip_days <- number of sets in a trip (i.e. trip duration)
+  # set_dur <- set duration (12h - same as predicted CPUE values)
   # travel_speed <- vessel speed between sets (km/h)
-  # km_day <- approx. 'a priori' extra daily km during the trip (e.g. travelling between sets); the a priori 'economic' decision
-  # dist_pref_exp <- added cost for the 'risk' of being farther offshore; make this 2 (off), 1 (exponential), 0 (linear)
-  
+  # km_day <- mean distance travelled between sets
+
   dist_all_ports <- ref_data[,which(colnames(ref_data)=="dist_P1"):which(colnames(ref_data)=="dist_P11")]
   dist_Pxx <- dist_all_ports[,port_start]    #distances to all cells from this departure port
   
