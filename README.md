@@ -1,5 +1,6 @@
-# LostOpportunity
+# Lost Economic Opportunity Analysis
 Data and code for calculating Lost Economic Opportunity for time-area fishery closures.
+
 Code author: James A Smith (UCSC, NOAA)
 
 Manuscript: Smith et al (in press) "Lost opportunity: quantifying the dynamic economic impact of time-area fishery closures" Journal of Applied Ecology
