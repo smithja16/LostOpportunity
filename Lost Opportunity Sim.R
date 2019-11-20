@@ -13,11 +13,11 @@
 library(raster)
 library(lubridate)
 
-## Specify directory location of CPUE rasters (this example has them saved in a "CPUE_rasters" folder inside my working directory)
+## Specify directory location of CPUE rasters (only if you want to change it)
 raster_loc <- "./CPUE_rasters"
 
 ## Load functions
-source(file = "./Utility Functions for Upload.R")
+source(file = "./Lost Opportunity Funs.R")
 
 ## Load data (variable swordfish price, reference data)
 closures <- readRDS("./closure_dates.RDS")  #whether a closure is active (1) or inactive (0) for every day of year
