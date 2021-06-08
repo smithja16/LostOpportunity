@@ -4,10 +4,10 @@
 
 **Code author**: James A Smith (UCSC, NOAA)
 
-**Manuscript**: Smith et al (in press) "Lost opportunity: quantifying the dynamic economic impact of time-area fishery closures" Journal of Applied Ecology
+**Manuscript**: Smith et al (2020) "Lost opportunity: quantifying the dynamic economic impact of time-area fishery closures" Journal of Applied Ecology
 
 This example requires the supplied data and functions, and runs from the 'Lost_Opportunity_Sim' R script.
-This is part of the simulation in Smith et al (in press), used to estimate lost economic opportunity due to the Loggerhead Conservation Area (LCA) in the California drift gillnet fishery (DGN). This is not the full simulation, because it supplies only 3 years of swordfish CPUE predictions, and does not simulate some of the additional scenarios reported in Smith et al.
+This is part of the simulation in Smith et al (2020), used to estimate lost economic opportunity due to the Loggerhead Conservation Area (LCA) in the California drift gillnet fishery (DGN). This is not the full simulation, because it supplies only 3 years of swordfish CPUE predictions, and does not simulate some of the additional scenarios reported in Smith et al.
 
 **Code**: 
 1) An R script to calculate Lost Economic Opportunity, for example data for the California drift gillnet swordfish fishery ('Lost_Opportunity_Sim.R')
