@@ -14,7 +14,7 @@ This is part of the simulation in Smith et al (2020), used to estimate lost econ
 2) An R script of two functions: the utility function, and a data summarising function ('Lost_Opportunity_Funs.R')
 
 **Data**: 
-1) A large set of raster files representing the predicted swordfish CPUE for every day of three fishing seasons (1991-1993). These rasters are used by the utility fucntion to calcualte Lost Economic Opportunity for each season.
+1) A large set of raster files representing the predicted swordfish CPUE for every day of three fishing seasons (1991-1993). These rasters are used by the utility function to calculate Lost Economic Opportunity for each season.
 2) Pre-calculated areas and locations of raster cells, distances of raster cells to departure ports, and cell locations relative to all relevant time-area fishery closures ('ref_data.RDS').
 3) Mean variable swordfish prices ('variable_prices.RDS').
 4) Dates at which each fishery closure is active ('closure_dates.RDS').
